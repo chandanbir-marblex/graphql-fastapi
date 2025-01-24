@@ -1,19 +1,20 @@
-
-from pydantic import BaseModel, PositiveFloat
-
-
-class Item(BaseModel):
-    id: int
-    name: str
-    price: PositiveFloat
-    quantity: PositiveInt
+import graphene
+from .query import BlogQuery
+from .mutation import BlogMutation
+from .subscription import BlogSubscription
 
 
-class ItemCreate(BaseModel):
-    name: str
-    price: PositiveFloat
+class Query(BlogQuery):
+    pass
 
 
-class ItemUpdate(BaseModel):
-    name: str | None = None
-    price: PositiveFloat | None = None
+class Mutation(BlogMutation):
+    pass
+
+
+class Subscription(BlogSubscription):
+    pass
+
+
+# schema = graphene.Schema(query=Query, mutation=Mutation, )
+schema = graphene.Schema(query=Query, subscription=Subscription)
