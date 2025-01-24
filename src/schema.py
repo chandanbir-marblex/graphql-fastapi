@@ -1,7 +1,7 @@
 import graphene
-from .query import BlogQuery
-from .mutation import BlogMutation
-from .subscription import BlogSubscription
+from .Query.blog_query import BlogQuery
+from .Mutation.blog_mutation import BlogMutation
+from .Subcription.blog_subscription import BlogSubscription
 
 
 class Query(BlogQuery):
@@ -17,4 +17,4 @@ class Subscription(BlogSubscription):
 
 
 # schema = graphene.Schema(query=Query, mutation=Mutation, )
-schema = graphene.Schema(query=Query, subscription=Subscription)
+schema = graphene.Schema(query=Query, mutation=Mutation, subscription=Subscription)

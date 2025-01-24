@@ -1,8 +1,6 @@
 import graphene
 from .models import BlogType, Blog
 from .database import get_db
-from fastapi import Depends
-from sqlalchemy.orm import Session
 
 
 class BlogQuery(graphene.ObjectType):
