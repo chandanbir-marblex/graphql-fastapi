@@ -1,6 +1,6 @@
 import graphene
-from .models import BlogType, Blog
-from .database import get_db
+from ..models import BlogType, Blog
+from ..database import get_db
 
 
 class BlogQuery(graphene.ObjectType):

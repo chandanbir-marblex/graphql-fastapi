@@ -1,5 +1,6 @@
 import graphene
-from sqlalchemy.engine import result
+from ..models import BlogType, Blog
+from ..database import get_db
 
 
 class CreateBlog(graphene.Mutation):
